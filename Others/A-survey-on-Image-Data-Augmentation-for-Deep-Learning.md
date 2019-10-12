@@ -1,3 +1,8 @@
+|  创建人   |  知乎论文阅读专栏 | 个人博客 | 其他相关链接 |
+|  ----  | ----  | ----  | ----  |
+| ming71 , [HesseSummer](https://github.com/HesseSummer)  | [论文笔记入口](https://zhuanlan.zhihu.com/c_1113860303082704896) | [chaser](https://ming71.github.io/) |   [CSDN](https://blog.csdn.net/mingqi1996) 
+
+**顺便mark我的数据增强代码工具（持续更新）：https://github.com/ming71/toolbox/tree/master/data_augmentation**
 
 <span id="inline-blue">论文发布日期：2019.6.1[Big Data]<p/span>
 
@@ -106,8 +111,14 @@
 
 ### 3.2 Curriculum learning            
 &emsp;&emsp;Bengio团队早年在ICML提出的观点，确实合理，一开始就进行大量的增强容易导致网络不收敛。
+从一个数据集学习到的数据增强也可以迁移到其他数据集。
+
 
 ### 3.3 Resolution impact
+高清（1920×1080×3）或4K（3840×2160×3）等高分辨率图像需要更多的处理和内存来训练深度CNN。然而下一代模型更倾向于使用这样更高分辨率的图像。因为模型中常用的下采样会造成图像中信息的丢失，使图像识别更困难。
+研究人员发现，高分辨率图像和低分辨率图像一起训练的模型集合，比单独的任何一个模型都要好。
+某个实验（这里就不注明引用了）在256×256图像和512×512图像上训练的模型分别获得7.96%和7.42%的top-5 error。汇总后，他们的top-5 error变低，为6.97%。
+随着超分辨率网络的发展，将图像放大到更高的分辨率后训练模型，能够得到更好更健壮的图像分类器。
 
 ### 3.4 Final dataset size            
 &emsp;&emsp;数据增强的形式可以分为在线和离线增强。前者是在加载数据时增强，可能造成额外的内存消耗（现在都是数据容量不变的随机增强）。               
